@@ -5,7 +5,7 @@ export interface Broadcast {
   default?: boolean;
 }
 
-export const tagesschau: Broadcast = {
+const tagesschau: Broadcast = {
   title: "Tagesschau",
   slug: "tagesschau",
   feedURL:
@@ -13,19 +13,26 @@ export const tagesschau: Broadcast = {
   default: true,
 };
 
-export const zdf: Broadcast = {
-  title: "ZDF Logo",
-  slug: "zdf",
+const tagesschau100: Broadcast = {
+  title: "Tagesschau 100 Sekunden",
+  slug: "tagesschau100",
+  feedURL:
+    "https://www.tagesschau.de/export/video-podcast/webxl/tagesschau-in-100-sekunden_https/",
+};
+
+const zdfTivi: Broadcast = {
+  title: "ZDFtivi Logo",
+  slug: "zdftivi",
   feedURL: "https://www.zdf.de/rss/podcast/video/zdf/kinder/logo",
 };
 
-export const arte: Broadcast = {
+const arte: Broadcast = {
   title: "ARTE Heute Journal",
   slug: "arte",
   feedURL:
     "https://mediathekviewweb.de/feed?query=Aktuelles%20journal%20junior",
 };
 
-const broadcasts = [tagesschau, zdf, arte];
+const broadcasts = [tagesschau, tagesschau100, zdfTivi, arte];
 
 export default broadcasts;
