@@ -1,15 +1,24 @@
 import NavBar from "@/components/Navbar";
 import broadcasts, { Broadcast } from "@/utils/broadcasts";
 import { GetStaticPropsContext, GetStaticPropsResult } from "next";
+import Head from "next/head";
 
 interface BroadcastProps {
+  title: string;
   slug: string;
   videoURL: string;
 }
 
-export default function BroadcastView({ slug, videoURL }: BroadcastProps) {
+export default function BroadcastView({
+  title,
+  slug,
+  videoURL,
+}: BroadcastProps) {
   return (
     <>
+      <Head>
+        <title>Videopod | {title}</title>
+      </Head>
       <NavBar currentSlug={slug} />
       <video className="video-stream" src={videoURL} autoPlay controls />
     </>
@@ -40,6 +49,7 @@ export async function getStaticProps(
 
   return {
     props: {
+      title: video.title,
       slug,
       videoURL,
     },
